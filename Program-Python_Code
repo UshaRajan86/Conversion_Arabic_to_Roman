@@ -1,0 +1,13 @@
+def arab_numerical_roman_numerical(value):
+    ''' Convert Arabic numerals to Roman numerals'''
+
+    numbers = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+    romannumbers = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
+    resultant = ''
+    for i in range(len(numbers)):
+        while value >= numbers[i]:
+             value -= numbers[i]
+             resultant += romannumbers[i]
+    return resultant
+num = int(input("Enter number(Maximun four digit): "))
+print(arab_numerical_roman_numerical(num))
